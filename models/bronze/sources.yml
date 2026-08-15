@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze_layer
+    database: walmart_db      # optional if same database
+    schema: BRONZE_LAYER
+
+    tables:
+      - name: stores
+      - name: fact
+      - name: department
