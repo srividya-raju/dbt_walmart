@@ -2,7 +2,7 @@
     config
     (
         materialized='incremental',
-        incremental_strategy='update+insert',
+        incremental_strategy='merge',
         unique_key='Date_Id'
 
     )
