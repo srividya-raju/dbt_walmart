@@ -1,3 +1,14 @@
+{{
+    config
+    (
+        materialized='incremental',
+        incremental_strategy='merge',
+        unique_key=['store_id','Dept_id']
+
+    )
+
+}}
+
 select cast(s.Store as integer) as store_id,
 cast(d.dept as integer) as Dept_id ,
 cast(s.type as varchar) as Store_type,
