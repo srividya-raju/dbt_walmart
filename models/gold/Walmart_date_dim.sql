@@ -3,7 +3,7 @@
     (
         materialized='incremental',
         incremental_strategy='append',
-        unique_key='Date_Id'
+        unique_key='date_id'
 
     )
 
