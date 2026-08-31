@@ -1,3 +1,4 @@
 select distinct date, 
-isholiday 
+isholiday,
+current_timestamp() as Insert_date
 from {{ ref('stg_fact') }} f
