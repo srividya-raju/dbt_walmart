@@ -10,7 +10,7 @@
 }}
 
 with date_dim as (
-f.Date_Id ,
+f.date_id,
 f.date,
 f.Isholiday,
 {% if is_incremental() %}
