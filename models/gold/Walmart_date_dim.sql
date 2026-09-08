@@ -22,4 +22,8 @@ where f.create_date > (select max(Insert_date) from {{this}})
 {% endif%}
 )
 
-select * from date_dim
+select date_id,
+date,
+Isholiday,
+create_date 
+from date_dim
