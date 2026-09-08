@@ -13,15 +13,13 @@ with date_dim as (
 select f.date_id,
 f.date,
 f.Isholiday,
-f.create_date,
-f.Insert_date
+f.create_date
 
 from {{ ref('int_date') }} f
 
 {% if is_incremental() %}
-where create_date > (select max(Insert_date) from {{this}})
+where f.create_date > (select max(Insert_date) from {{this}})
 {% endif%}
-
 )
 
 select * from date_dim
