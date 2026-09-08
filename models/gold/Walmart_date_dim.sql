@@ -14,12 +14,7 @@ f.date_id,
 f.date,
 f.Isholiday,
 f.create_date,
-{% if is_incremental() %}
-
-    Insert_date,
-{% else %}
-    current_timestamp() as Insert_date,
-{% endif %}
+f.Insert_date
 
 from {{ ref('int_date') }} f
 
