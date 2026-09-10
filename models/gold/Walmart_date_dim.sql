@@ -19,7 +19,7 @@ f.Insert_date
 from {{ ref('int_date') }} f
 
 {% if is_incremental() %}
-where f.create_date > (select max(Insert_date) from {{this}})
+where f.create_date > (select max(t.Insert_date) from {{this}} t)
 {% endif%}
 )
 
