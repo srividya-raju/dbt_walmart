@@ -13,7 +13,8 @@ with date_dim as (
 select f.date_id,
 f.date,
 f.Isholiday,
-f.create_date
+f.create_date,
+f.Insert_date
 
 from {{ ref('int_date') }} f
 
