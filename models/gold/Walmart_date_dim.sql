@@ -2,7 +2,8 @@
     config
     (
         materialized='incremental',
-        incremental_strategy='append'
+        incremental_strategy='delete+insert',
+        unique_key='date_id'
 
     )
 
@@ -20,6 +21,7 @@ from {{ ref('int_date') }} f
 
 )
 
+, final as (
 select date_id,
 date,
 Isholiday,
@@ -29,3 +31,6 @@ from date_dim
 {% if is_incremental() %}
 where create_date > (select max(Insert_date) from {{this}} )
 {% endif%}
+)
+
+select * from final
