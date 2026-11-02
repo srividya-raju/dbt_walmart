@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: raw
     database: walmart_db
-    schema: bronze_layer
+    schema: public
 
     tables:
       - name: department
