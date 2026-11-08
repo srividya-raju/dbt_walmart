@@ -1,4 +1,4 @@
-{% snapshot fact_snapshot %}
+{% snapshot walmart_snapshot %}
 
 {{
     config(
