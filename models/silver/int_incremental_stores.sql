@@ -11,9 +11,9 @@ with src as (
     select
         store_ID,
         store,
-        dept,
-        type,
-        size,
+        dept as dept_id,
+        type as store_type,
+        size as store_size,
         create_time,
         INSERT_DATE
     from {{ ref('int_store') }} f
@@ -31,9 +31,9 @@ final as (
     select
         store_ID,
         store,
-        dept,
-        type,
-        size,
+        dept_id,
+        store_type,
+        store_size,
         create_time,
         INSERT_DATE
     from src s
