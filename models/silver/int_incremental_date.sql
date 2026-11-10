@@ -36,7 +36,7 @@ final as (
     from src s
 
     {% if is_incremental() %}
-    where create_time > (select max(insert_date) from {{this}})
+    where create_time > (select COALESCE(MAX(insert_date), '1900-01-01') from {{this}})
     {% endif %}
 
 )
