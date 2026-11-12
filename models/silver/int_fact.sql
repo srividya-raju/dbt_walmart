@@ -10,9 +10,9 @@ markdown2,
 markdown3,
 markdown4,
 markdown5,
-create_time as insert_date,
+f.create_time as insert_date,
 dbt_updated_at as update_date,
-dbt_start_from as vrsn_start_date,
+dbt_valid_from as vrsn_start_date,
 dbt_valid_to as vrsn_end_date
 from {{ref('fact_snapshot')}} f
 join {{ref('int_store')}} s on f.store=s.store
