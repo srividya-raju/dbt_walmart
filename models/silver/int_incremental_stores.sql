@@ -11,7 +11,7 @@ with src as (
     select
         store_ID,
         store,
-        dept as dept_id,
+        dept,
         type as store_type,
         size as store_size,
         create_time,
@@ -31,7 +31,7 @@ final as (
     select
         store_ID,
         store,
-        dept_id,
+        dept as dept_id,
         store_type,
         store_size,
         create_time,

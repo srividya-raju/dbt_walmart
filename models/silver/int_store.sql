@@ -1,6 +1,6 @@
 with distinct_items as (
 select 
-distinct d.store, d.dept, s.type, s.size, s.create_time
+distinct d.store, d.dept, s.type, s.size, s.create_time, d.weekly_sales
 from {{ ref('stg_department')}} d
 left join {{ ref('stg_stores')}} s on d.store=s.store)
 
@@ -11,6 +11,7 @@ select
     dept,
     type,
     size,
+    weekly_sales,
     create_time,
     current_timestamp() AS INSERT_DATE
 from distinct_items
