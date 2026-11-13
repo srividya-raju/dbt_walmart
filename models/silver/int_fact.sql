@@ -15,4 +15,4 @@ dbt_updated_at as update_date,
 dbt_valid_from as vrsn_start_date,
 dbt_valid_to as vrsn_end_date
 from {{ref('fact_snapshot')}} f
-join {{ref('int_store')}} s on f.store=s.store
+join {{ref('int_store')}} s on f.store=s.store 
